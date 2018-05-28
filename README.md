@@ -1,5 +1,7 @@
 # AutoMLC
-**Automated Multi-label Classification Repository**
+Automated Multi-label Classification Repository
+
+**Overview**
 
 This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatically select and configure multi-label classification algorithms based on the [MEKA tool](http://waikato.github.io/meka/). If you use this project in your work, please cite the following papers:
 
