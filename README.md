@@ -5,12 +5,12 @@ This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatica
 
 1. **GA-Auto-MLC**
 
--- A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Towards a method for automatically selecting and configuring multi-label classification algorithms. In Proceedings of the GECCO Companion, pp. 1125–1132, 2017.
+  - A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Towards a method for automatically selecting and configuring multi-label classification algorithms. In Proceedings of the GECCO Companion, pp. 1125–1132, 2017.
 
 2. **Auto-MEKA_GGP**
 
--- A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Automated Selection and Configuration of Multi-Label Classification Algorithms with Grammar-based Genetic Programming. In Proceedings of the  International Conference on Parallel Problem Solving from Nature (PPSN), 2018. **[To appear.]**
--- Note that this project uses the EpochX framework to implement the Grammar-based Genetic Programming (GGP). The library can be found in the link: [EpochX](https://www.epochx.org/) 
+  - A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Automated Selection and Configuration of Multi-Label Classification Algorithms with Grammar-based Genetic Programming. In Proceedings of the  International Conference on Parallel Problem Solving from Nature (PPSN), 2018. **[To appear.]**
+  - Note that this project uses the EpochX framework to implement the Grammar-based Genetic Programming (GGP). The library can be found in the link: [EpochX](https://www.epochx.org/) 
 
 
 **Support**
