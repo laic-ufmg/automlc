@@ -1,5 +1,5 @@
 # AutoMLC
-Automated Multi-label Classification Repository
+**Automated Multi-label Classification Repository**
 
 This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatically select and configure multi-label classification algorithms based on the [MEKA tool](http://waikato.github.io/meka/). If you use this project in your work, please cite the following papers:
 
@@ -11,6 +11,12 @@ This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatica
 
   - A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Automated Selection and Configuration of Multi-Label Classification Algorithms with Grammar-based Genetic Programming. In Proceedings of the  International Conference on Parallel Problem Solving from Nature (PPSN), 2018. **[To appear.]**
   - Note that this project uses the EpochX framework to implement the Grammar-based Genetic Programming (GGP). The library can be found in the link: [EpochX](https://www.epochx.org/) 
+  
+  
+
+**Documentation**
+The description of the multi-label classification (MLC) search is available in the following link: [MLC Search Space](https://github.com/laic-ufmg/automlc/blob/master/PPSN/MLC-SearchSpace.pdf)
+
 
 
 **Support**
