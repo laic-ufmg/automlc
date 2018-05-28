@@ -9,7 +9,7 @@ A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Towards a method for automatica
 
 **Auto-MEKA_GGP**:
 
-A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Automated Selection and Configuration of Multi-Label Classification Algorithms with Grammar-based Genetic Programming. In Proceedings of the  International Conference on Parallel Problem Solving from Nature (PPSN), 2018.
+A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Automated Selection and Configuration of Multi-Label Classification Algorithms with Grammar-based Genetic Programming. In Proceedings of the  International Conference on Parallel Problem Solving from Nature (PPSN), 2018. **[To appear.]**
 
 
 
