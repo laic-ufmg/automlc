@@ -18,5 +18,5 @@ Note that this project uses the EpochX framework to implement the Grammar-based 
 
 **Support**
 
-Any questions or comments should be directed to Alex de Sá (alexgcsa@dcc.ufmg.br).
+Any questions or comments should be directed to Alex de Sá (alexgcsa@dcc.ufmg.br). You can also create an issue on the repository.
 
