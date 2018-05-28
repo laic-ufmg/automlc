@@ -13,9 +13,7 @@ A. G. C. de Sá, G. L. Pappa, and A. A. Freitas. Automated Selection and Configu
 
 
 
-Note that this project uses the EpochX framework to implement the Grammar-based Genetic Programming (GGP). The library can be found in the link:
-
-[EpochX](https://www.epochx.org/) 
+Note that this project uses the EpochX framework to implement the Grammar-based Genetic Programming (GGP). The library can be found in the link: [EpochX](https://www.epochx.org/) 
 
 
 **Support**
