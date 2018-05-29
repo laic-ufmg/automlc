@@ -1,5 +1,5 @@
 # AutoMLC
-Automated Multi-label Classification Repository
+Automated Multi-Label Classification
 
 **Overview**
 
@@ -20,6 +20,9 @@ This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatica
 
 The description of the multi-label classification (MLC) search is available in the following link: [MLC Search Space](https://github.com/laic-ufmg/automlc/blob/master/PPSN/MLC-SearchSpace.pdf)
 
+**License**
+
+See [LICENSE](https://github.com/laic-ufmg/automlc/blob/master/LICENSE) file.
 
 
 **Support**
