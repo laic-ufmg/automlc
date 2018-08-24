@@ -29,3 +29,5 @@ See [LICENSE](https://github.com/laic-ufmg/automlc/blob/master/LICENSE) file.
 
 Any questions or comments should be directed to Alex de Sá (alexgcsa@dcc.ufmg.br). You can also create an issue on the repository.
 
+**We are still working on a tutorial to turn Auto-MEKA_GGP and GA-Auto-MLC easy methods to use.**
+
