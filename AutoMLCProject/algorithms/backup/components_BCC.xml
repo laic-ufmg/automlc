@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!--
+		- "gene": Indica uma posição no cromossomo, podendo ser preenchido por qualquer um dos alelos.
+		- "geneOption": Extende "gene" mas marca a entrada de valores, na forma de alelos.
+		- "allele: Indica as opções de preenchimento para seu gene "pai".
+		- Parâmetros:
+			- comment: Comentário a respeito do campo
+			- parameter: parâmetro utilizado no Weka para a chamada
+			- type (apenas para "gene"): Tipo do gene. Quatro possíveis valores:
+				- "int": Indica um intervalo (fechado) de valores inteiros. Se o campo "step" for utilizado, o valor inicial será 						 incrementado "step" até o valor final (default "step"=1)
+				- "float": Indica um intervalo (fechado) de valores reais. Se o campo "step" for utilizado, o intervalo é divido 						   em "step" pedaços (default "step"=10)
+				- "set": Todos os valores possíveis são listados
+				- "allele": Indica uma lista de alelos.
+	-->
+<template maxDepth="20"><gene>
+<allele comment="Multi-label learning - That needs a single-label classifier as parameter">
+	
+	<gene comment="Single-Label Machine Learning algorithm" parameter="#">
+
+		<allele comment="Multi-layer perceptron" parameter="-W weka.classifiers.functions.MultilayerPerceptron -- ">
+			<gene   type="float" step="101" comment="Learning rate" parameter="-L">
+				<allele>0.0,1.0</allele>
+			</gene>
+			<gene   type="float" step="101" comment="Momentum" parameter="-M">
+				<allele>0.0,1.0</allele>
+			</gene>
+			<gene  	comment="Number of epochs" parameter="-N" type="int" step="25">
+				<allele>25,10000</allele>
+			</gene>	
+			<gene   type="set" comment="Layers" parameter="-H">
+				<allele>a</allele>
+				<allele>i</allele>
+				<allele>o</allele>
+				<allele>t</allele>
+				<allele>1</allele>
+				<allele>2</allele>
+				<allele>3</allele>
+				<allele>4</allele>
+				<allele>5</allele>
+				<allele>6</allele>
+				<allele>7</allele>
+				<allele>8</allele>
+				<allele>9</allele>
+				<allele>10</allele>
+				<allele>15</allele>
+				<allele>20</allele>
+				<allele>25</allele>
+				<allele>50</allele>
+				<allele>100</allele>
+			</gene>
+		</allele>		
+		<allele comment="SVM algorithm" parameter="-W weka.classifiers.functions.LibSVM -- ">
+			<gene   type="set" comment="Cost" parameter="-C">
+				<allele>0.03125</allele>
+				<allele>0.125</allele>
+				<allele>0.5</allele>
+				<allele>2.0</allele>
+				<allele>8.0</allele>
+				<allele>32.0</allele>
+				<allele>128.0</allele>
+				<allele>512.0</allele>
+				<allele>2048.0</allele>
+				<allele>32768.0</allele>
+			</gene>	
+			<gene   type="set" comment="Gamma" parameter="-G">
+				<allele>"0.000030518"</allele>
+				<allele>"0.00012207"</allele>
+				<allele>"0.000488281"</allele>
+				<allele>"0.001953125"</allele>
+				<allele>"0.0078125"</allele>
+				<allele>"0.03125"</allele>
+				<allele>"0.5"</allele>
+				<allele>"2.0"</allele>
+				<allele>"8.0"</allele>
+			</gene>			
+		</allele>
+		<allele comment="K nearest neighbors classifier" parameter="-W weka.classifiers.lazy.IBk --">
+			<gene  	comment="KNN" parameter="-K" type="int" step="1">
+				<allele>1,30</allele>
+			</gene>	
+			
+		</allele>
+		<allele comment="Logistic Regression Classifier." parameter="-W weka.classifiers.functions.Logistic --">
+			<gene   type="set" comment="Ridge value" parameter="-R">
+				<allele>0.00000001</allele>
+				<allele>0.0000001</allele>
+				<allele>0.000001</allele>
+				<allele>0.00001</allele>
+				<allele>0.0001</allele>
+				<allele>0.001</allele>
+				<allele>0.01</allele>
+				<allele>0.1</allele>
+				<allele>1.0</allele>
+			</gene>			
+		</allele>
+		<allele comment="OneR- Decision rules classifier." parameter="-W weka.classifiers.rules.OneR --">
+			<gene  	comment="Min bucket size" parameter="-B" type="int" step="1">
+				<allele>1,10</allele>
+			</gene>				
+		</allele>
+		<allele comment="PART - Decision rules classifier." parameter="-W weka.classifiers.rules.PART --">
+			<gene   type="float" step="100" comment="Confident factor" parameter="-C">
+				<allele>1.0E-2,0.50</allele>
+			</gene>
+			<gene  	comment="Minimum number of objects" parameter="-M" type="int" step="1">
+				<allele>2,10</allele>
+			</gene>				
+		</allele>
+		<allele comment="Random Forest classifier." parameter="-W weka.classifiers.trees.RandomForest --">
+			<gene  	comment="Number of trees" parameter="-I" type="int" step="5">
+				<allele>5,100</allele>
+			</gene>				
+		</allele>
+		<allele comment="Decision tree classifier." parameter="-W weka.classifiers.trees.J48 --">
+			<gene   type="float" step="100"	comment="Confident factor" parameter="-C">
+				<allele>1.0E-2,0.50</allele>
+			</gene>
+			<gene  	comment="Minimum number of objects" parameter="-M" type="int" step="1">
+				<allele>2,10</allele>
+			</gene>			
+		</allele>
+		<allele comment="Naive Bayes." parameter="-W weka.classifiers.bayes.NaiveBayes ">
+		</allele>
+		<allele comment="TAN" 	parameter="-W weka.classifiers.bayes.BayesNet -- -D -Q weka.classifiers.bayes.net.search.local.TAN --">
+			<gene comment="ScoringMetricsL" parameter="-S" type="set">
+				<allele>BAYES</allele>
+				<allele>BDeu</allele>
+				<allele>MDL</allele>
+				<allele>ENTROPY</allele>
+				<allele>AIC</allele>				
+			</gene>
+			<gene type="float" step="1000" comment="A" parameter="-E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A">
+				<allele>1.0E-4,9.0</allele>
+			</gene>
+
+		</allele>
+		<allele comment="Hill climber" 	parameter="-W weka.classifiers.bayes.BayesNet -- -D -Q weka.classifiers.bayes.net.search.local.HillClimber --">
+			<gene comment="ScoringMetricsL" parameter="-S" type="set">
+				<allele>BAYES</allele>
+				<allele>BDeu</allele>
+				<allele>MDL</allele>
+				<allele>ENTROPY</allele>
+				<allele>AIC</allele>				
+			</gene>
+			<gene  comment="Parents" parameter="-P" type="int" step="1">
+				<allele>1,10</allele>
+			</gene>
+			<gene type="float" step="1000" comment="A" parameter="-E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A">
+				<allele>1.0E-4,9.0</allele>
+			</gene>
+		</allele>
+	</gene>
+
+	<gene comment="Multi-label classification algorithms -- type 2 - dependent" parameter="#">
+		<allele comment="Bayesian Classifier Chains" parameter="meka.classifiers.multilabel.BCC">
+			<gene comment="Dependency type" parameter="-X" type="set">
+				<allele>C</allele>
+				<allele>I</allele>
+				<allele>Ib</allele>
+				<allele>Ibf</allele>
+				<allele>H</allele>
+				<allele>Hbf</allele>
+				<allele>X</allele>
+				<allele>F</allele>
+				<allele>L</allele>
+				<allele>None</allele>
+				
+			</gene>		
+		</allele>
+	</gene>
+</allele>
+
+
+</gene></template>
+	
+	
+

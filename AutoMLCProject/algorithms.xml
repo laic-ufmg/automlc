@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchspace>
+	<!--
+		- algorithms: used to build the search space
+	-->
+	<algorithms>
+		  
+		<!--<path>algorithms/components_PMCC_meta2.xml</path> -->
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmDependent.xml</path>
+		<path>algorithms/components_algorithmIndependent.xml</path>
+		<path>algorithms/components_algorithmIndependent.xml</path>
+		<path>algorithms/components_algorithmIndependent.xml</path>
+		<path>algorithms/components_algorithmIndependent.xml</path>
+
+		<path>algorithms/components_meta0_algoritmIndep.xml</path>
+		<path>algorithms/components_meta0_algoritmIndep.xml</path>
+		<path>algorithms/components_meta1_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta2_algoritmDep.xml</path>
+		<path>algorithms/components_meta3_algoritmDep.xml</path>
+		<path>algorithms/components_meta4_algoritmDep.xml</path>
+
+	</algorithms>
+</searchspace>
+

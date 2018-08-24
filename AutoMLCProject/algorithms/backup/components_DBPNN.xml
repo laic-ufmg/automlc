@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!--
+		- "gene": Indica uma posição no cromossomo, podendo ser preenchido por qualquer um dos alelos.
+		- "geneOption": Extende "gene" mas marca a entrada de valores, na forma de alelos.
+		- "allele: Indica as opções de preenchimento para seu gene "pai".
+		- Parâmetros:
+			- comment: Comentário a respeito do campo
+			- parameter: parâmetro utilizado no Weka para a chamada
+			- type (apenas para "gene"): Tipo do gene. Quatro possíveis valores:
+				- "int": Indica um intervalo (fechado) de valores inteiros. Se o campo "step" for utilizado, o valor inicial será 						 incrementado "step" até o valor final (default "step"=1)
+				- "float": Indica um intervalo (fechado) de valores reais. Se o campo "step" for utilizado, o intervalo é divido 						   em "step" pedaços (default "step"=10)
+				- "set": Todos os valores possíveis são listados
+				- "allele": Indica uma lista de alelos.
+	-->
+<template maxDepth="20"><gene>
+
+<allele comment="Multi-label learning - That does not need a single-label classifier as parameter - Independent" >
+	<gene parameter="#">
+		<allele comment="Deep Back Propagation Neural Network" parameter="meka.classifiers.multilabel.DBPNN">
+			<gene type="float" step="101" comment="Learning rate" parameter="-r">
+				<allele>0.0,1.0</allele>
+			</gene>
+			<gene type="float" step="101" comment="Momentum" parameter="-m">
+				<allele>0.0,1.0</allele>
+			</gene>
+			<gene   type="set" comment="Layers" parameter="-H">
+				<allele>1</allele>
+				<allele>2</allele>
+				<allele>3</allele>
+				<allele>4</allele>
+				<allele>5</allele>
+				<allele>6</allele>
+				<allele>7</allele>
+				<allele>8</allele>
+				<allele>9</allele>
+				<allele>10</allele>
+				<allele>15</allele>
+				<allele>20</allele>
+				<allele>25</allele>
+				<allele>50</allele>
+				<allele>100</allele>
+			</gene>
+			<gene  	comment="Number of epochs" parameter="-E" type="int" step="25">
+				<allele>25,1000</allele>
+			</gene>
+			<gene  	comment="Number of RBMs" parameter="-N" type="int" step="1">
+				<allele>1,20</allele>
+			</gene>
+		</allele>
+	</gene>	
+	
+
+</allele>
+
+</gene></template>

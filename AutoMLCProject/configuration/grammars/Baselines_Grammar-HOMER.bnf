@@ -1,0 +1,65 @@
+<START> ::= <DEFINE-THRESHOLD-LEVEL> <MLC-ALGORITHMS>
+<MLC-ALGORITHMS> ::= HOMER <t> <k_homer> BR <ALGS-SLC>
+<t> ::= BalancedClustering
+<k_homer> ::= 3
+
+<ALGS-SLC> ::= <J48> | <RandomForest> | <PART> | <KNN> | <MultiLayerPerc> | <SeqMinOptimization> | <LR> | <NB> | TAN | K2 | <LogisticModelTrees>
+
+<J48> ::= J48 <J48-Complement> <J48-Basics>
+<J48-Complement> ::= <cf> <sr>
+<cf> ::= 0.25
+<sr> ::= True
+<J48-Basics> ::= <mno> <ct> <bs> <umc> <ul>
+<mno> ::= 2
+<ct> ::= True
+<bs> ::= False
+<umc> ::= True
+<ul> ::= False
+
+<RandomForest> ::= RandomForest <nt> <nf>  <md>
+<nt> ::= 100
+<nf> ::= 0
+<md> ::= 0
+
+<PART> ::= PART <PART-BASICS> <PART-CONSTRAINTS>
+<PART-BASICS> ::= <mno> <bs>
+<PART-CONSTRAINTS> ::= True <nr>
+<nr> ::= 2
+
+<KNN> ::= KNN <k_nn> <loo> <dw> 
+<k_nn> ::= 20
+<loo> ::= True
+<dw> ::= None
+
+<NB> ::= NaiveBayes <NB-Parameters>
+<NB-Parameters> ::= None
+
+<MultiLayerPerc> ::= MultiLayerPerc <lr> <m> <nhn> <n2b> <reset> <decay>
+<lr> ::= 0.3
+<m> ::= 0.3
+<nhn> ::= a
+<n2b> ::= True
+<reset> ::= True
+<decay> ::= False
+
+<LR> ::= LogisticRegression <r>
+<r> ::= 0.00000001
+
+<SeqMinOptimization> ::= SeqMinOptimization <c> <ft> <bcm> <kernel>
+<c> ::= 1.0
+<ft> ::= 0
+<bcm> ::= False
+<kernel> ::= RBFKernel <g>
+<g> ::= 0.01
+
+<LogisticModelTrees> ::= LogisticModelTrees <cn> <sor> <fr> <eop> <uaic> <wtb_activate>
+<cn> ::= False
+<sor> ::= False
+<fr> ::= True
+<eop> ::= False
+<wtb_activate> ::= True <wtb>
+<uaic> ::=False
+<wtb> ::= 0.0
+
+<DEFINE-THRESHOLD-LEVEL> ::= threshold <predtshd>
+<predtshd> ::= PCut1

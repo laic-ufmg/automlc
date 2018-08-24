@@ -1,0 +1,226 @@
+<START> ::= <DEFINE-THRESHOLD-LEVEL> <MLC-ALGORITHMS>
+<MLC-ALGORITHMS> ::= BR <ALGS-SLC> | CC <ALGS-SLC> | LP <ALGS-SLC> | <BRq> <ALGS-SLC> | <CCq> <ALGS-SLC> | FW <ALGS-SLC> | RT <ALGS-SLC> | PCC <ALGS-SLC> | <CT> <ALGS-SLC>| <MCC> <ALGS-SLC>| <CDT> <ALGS-SLC> | <CDN> <ALGS-SLC> | <PS> <ALGS-SLC> | <PSt> <ALGS-SLC> | <RAkEL> <ALGS-SLC> | <RAkELd> <ALGS-SLC> | <BCC> <ALGS-SLC> | <PMCC> <ALGS-SLC> | <ML-BPNN> | <ML-DBPNN> <ML-BPNN> | SM <META-MLC1-FULL> | <RSML> <META-MLC1-FULL> | <BaggingMLC> <META-MLC2-FULL> | <BaggingMLCDUP> <META-MLC2-FULL> | <EnsembleMLC> <META-MLC2-FULL> | <EM> <META-MLC3-FULL> | <CM> <META-MLC3-FULL> | <MBR> 
+
+<ALGS-SLC> ::= <ALG-TYPE-WITHOUT-FS> 
+
+<ALGS-SLC-WITH-FS> ::= <ASC> <ALG-TYPE-WITHOUT-FS>
+<ASC> ::= ASC <sm>
+
+<ALG-TYPE-WITHOUT-FS> ::= <J48> | <RandomForest> | <OneR> | <PART> | <KNN> | <MultiLayerPerc> | <SeqMinOptimization> | <LR> | <NB> | TAN | HillClimber
+
+<J48> ::= J48 <J48-Complement> <J48-Basics>
+<J48-Complement> ::= <cf> <sr> | True
+<cf> ::= RANDFLOAT(0.0,1.0)
+<sr> ::= True | False
+<J48-Basics> ::= <mno> <ct> <bs> <umc> <ul>
+<mno> ::= RANDINT_TYPE0(1,64)
+<ct> ::= True | False
+<bs> ::= True | False
+<umc> ::= True | False
+<ul> ::= True | False
+
+
+<RandomForest> ::= RandomForest <nt> <nf>  <md>
+<nt> ::= RANDINT_TYPE0(2,256)
+<nf> ::= RANDINT_TYPE0(2,32) | 0
+<md> ::= RANDINT_TYPE0(2,20) | 0
+
+<RandomTree> ::= RandomTree <mw> <nfbgt> <nf>  <md>
+<mw> ::= RANDINT_TYPE0(1,64)
+<nfbgt> ::= 0 | <growing_the_tree_and_backfitting>
+<growing_the_tree_and_backfitting> ::= RANDINT_TYPE0(2,5)
+
+<REPTree> ::= REPTree <mw> <up>  <md>
+<up> ::= True | False
+
+<DT> ::= DT <em> <uibk> <sm> <crv> 
+<em> ::= acc | rmse | mae | auc
+<uibk> ::= True | False
+<sm> ::= GreedyStepwise | BestFirst
+<crv> ::= 1 | 2 | 3 | 4 
+
+<JRip> ::= JRip <mtw> <cer> <up> <o> 
+<mtw> ::= RANDFLOAT(1.0,5.0)
+<cer> ::= True | False
+<o> ::= RANDINT_TYPE0(1,5) 
+
+
+<OneR> ::= OneR <mbs>
+<mbs> ::= RANDINT_TYPE0(1,32)
+
+
+<PART> ::= PART <PART-BASICS> <PART-CONSTRAINTS>
+<PART-BASICS> ::= <mno> <bs>
+<PART-CONSTRAINTS> ::= True <nr> | False
+<nr> ::= RANDINT_TYPE0(2,5)
+
+<KNN> ::= KNN <k_nn> <loo> <dw> 
+<k_nn> ::= RANDINT_TYPE0(1,64)
+<loo> ::= True | False
+<dw> ::= F | I | None
+
+<KStar> ::= KStar <gb> <eab> <mm>
+<gb> ::= RANDINT_TYPE0(1,100)
+<eab> ::= True | False
+<mm> ::= a | d | m | n
+
+
+<VotedPerceptron> ::= VotedPerceptron <i> <mk> <e>
+<i> ::= RANDINT_TYPE0(1,10)
+<mk> ::= RANDINT_TYPE0(5000,50000)
+<e> ::= RANDFLOAT(0.2,5.0)
+
+<MultiLayerPerc> ::= MultiLayerPerc <lr> <m> <nhn> <n2b> <reset> <decay>
+<lr> ::= RANDFLOAT(0.1,1.0)
+<m> ::= RANDFLOAT(0.0,1.0) 
+<nhn> ::= a | i | o | t 
+<n2b> ::= True | False
+<reset> ::= True | False
+<decay> ::= True | False
+
+<LR> ::= LogisticRegression <r>
+
+<StocGradDescent> ::= StocGradDescent <lf> <lr_sgd> <nn> <nrmv> <r>
+<lf> ::= 0 | 1 | 2
+<lr_sgd> ::= RANDFLOAT(0.00001,1.0)
+<nn> ::= True | False
+<nrmv> ::= True | False
+
+<r> ::= RANDFLOAT(0.000000000001,10.0)
+
+
+<SeqMinOptimization> ::= SeqMinOptimization <c> <ft> <bcm> <kernel>
+<c> ::= RANDFLOAT(0.5,1.5) 
+<ft> ::= 0 | 1 | 2 
+<bcm> ::= True | False
+<kernel> ::= <poly_kern> <exp> <ulo> | Puk <om> <sig> | RBFKernel <g>
+<poly_kern> ::= NormalizedPolyKernel | PolyKernel
+<exp> ::= RANDFLOAT(0.2,5.0)
+<ulo> ::= True | False
+<om> ::= RANDFLOAT(0.1,1.0)
+<sig> ::= RANDFLOAT(0.1,10.0)
+<g> ::= RANDFLOAT(0.001,1.0)
+
+<NB> ::= NaiveBayes <NB-Parameters>
+<NB-Parameters> ::= uke | usd | None
+
+<SimpleLogistic> ::= SimpleLogistic <ucv> <uaic> <wtb_activate>
+<ucv> ::= True | False
+
+<LogisticModelTrees> ::= LogisticModelTrees <cn> <sor> <fr> <eop> <uaic> <wtb_activate>
+<cn> ::= True | False
+<sor> ::= True | False
+<fr> ::= True | False
+<eop> ::= True | False
+
+<wtb_activate> ::= True <wtb> | False
+<uaic> ::= True | False
+<wtb> ::= RANDFLOAT(0.0,1.0)
+
+
+<META-SLC> ::= <LWL> <ALG-TYPE_LWL> | RandomSubspace <sss> <ni_random_methods> <ALG-TYPE-WITHOUT-FS> | RandomCommittee <ni_random_methods> <ALG-TYPE_RC> | <Bagging> <ni_ada_and_bagging> <ALG-TYPE-WITHOUT-FS> | <AdaM1> <ni_ada_and_bagging> <ALG-TYPE-WITHOUT-FS> | <STACKING> | <VOTING>
+
+<ALG-TYPE_LWL> ::= <J48> | DecisionStump | <RandomForest> | <RandomTree> | <REPTree> | <DT> | <JRip> | <PART> | ZeroR | <KNN> | <NB> | TAN | K2 | HillClimber | LAGDHillClimber | SimulatedAnnealing | TabuSearch | NaiveBayesMultinomial | <MultiLayerPerc> |  <SeqMinOptimization> | <SimpleLogistic>
+
+<LWL> ::= LWL <k_lwl_activate> <wk_activate>
+<k_lwl_activate> ::= True <k_lwl> | False
+<k_lwl> ::= -1 | 10| 30 | 60 | 90 | 120
+<wk_activate> ::= True <wk> | False
+<wk> ::= 0 | 1 | 2 | 3 | 4 
+<sss> ::= RANDFLOAT(0.1,1.0)
+<ni_random_methods> ::= RANDINT_TYPE0(2,64)
+<ALG-TYPE_RC> ::= <RandomForest> | <RandomTree> | <REPTree> | <StocGradDescent> | <MultiLayerPerc>
+
+
+<Bagging> ::= BaggingSLC <BaggingSLC_BASICS>
+
+<BaggingSLC_BASICS> ::= False <bsp-bagg> | True 100
+<bsp-bagg> ::= RANDINT_TYPE0(10,100) 
+
+<AdaM1> ::= AdaM1 <wt> <ur>
+<wt> ::= RANDINT_TYPE0(50,100) | 100 
+<ni_ada_and_bagging> ::= RANDINT_TYPE0(2,128)
+<ur> ::= True | False
+
+
+<STACKING> ::= Stacking <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> | Stacking <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> | Stacking <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> | Stacking <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS>
+
+<VOTING> ::= <Vote> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> | <Vote> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> | <Vote> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> | <Vote> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS> <ALG-TYPE-WITHOUT-FS>
+
+<Vote> ::= Vote <cr> 
+<cr> ::= AVG | PROD | MAJ | MIN | MAX
+
+<BRq> ::= BRq <dsr>
+<CCq> ::= CCq <dsr>
+<dsr> ::= RANDFLOAT(0.2,0.8)
+<MCC> ::= MCC <chi_MCC> <ii> <eval_metrics> 
+<CDN> ::= CDN <i_cdn_cdt> <ci>
+<chi_MCC>::= <chi_CT> | 0
+<ii> ::= RANDINT_TYPE0(2,100)
+<eval_metrics> ::= Accuracy | Jaccard-index | Hamming-score | Exact-match | Jaccard-distance | Hamming-loss | ZeroOne-loss | Harmonic-score | One-error | Rank-loss | Avg-precision | Log-Loss-lim:L | Log-Loss-lim:D | Micro-Precision | Micro-Recall | Macro-Precision | Macro-Recall | F1-micro-averaged | F1-macro-averaged-by-example | F1-macro-averaged-by-label | AUPRC-macro-averaged | AUROC-macro-averaged | Levenshtein-distance 
+<CT> ::= CT <chi_CT> <w> <dp> <ii> <eval_metrics>
+<chi_CT> ::= RANDINT_TYPE0(2,1500) 
+<dp> ::= C | I | Ib | Ibf | H | Hbf | X | F | None
+<w> ::= 0 1 | -1 <d>
+<d> ::= RANDINT_TYPE1(1,SQRT(L)+1)
+<CDT> ::= CDT <w> <dp> <i_cdn_cdt> <ci>
+<i_cdn_cdt> ::= RANDINT_TYPE0(101,1000) 
+<ci> ::= RANDINT_TYPE0(1,100)
+<PS> ::= PS <sv> <pv>
+<PSt> ::= PSt <sv> <pv>
+<RAkELd> ::= RAkELd <les> <sv> <pv>
+<RAkEL> ::= RAkEL <sre> <les> <sv> <pv>
+<sv> ::= RANDINT_TYPE0(0,5) 
+<pv> ::= RANDINT_TYPE0(1,5) 
+<les> ::= RANDINT_TYPE2(1,L/2)
+<sre> ::= RANDINT_TYPE3(2,min(2L;100))
+<BCC> ::= BCC <dp_complete>
+<dp_complete> ::= L | <dp>
+<B> ::= RANDFLOAT(0.01,0.99)
+<ts> ::= 0 | 1 
+<chi_PMCC> ::= RANDINT_TYPE0(51,1500)
+<ps> ::= RANDINT_TYPE0(1,50)
+<PMCC> ::= PMCC <B> <ts> <ii> <chi_PMCC> <ps> <eval_metrics>
+
+<ML-BPNN> ::= ML-BPNN <ne> <nhu_bpnn> <lr_bpnn> <m_bpnn>						       
+<ne> ::= RANDINT_TYPE0(10,1000)                                           
+<nhu_bpnn> ::= RANDINT_TYPE4((0.2,1.0)*n_attributes)
+<lr_bpnn> ::= RANDFLOAT(0.001,0.1)                                  
+<m_bpnn> ::=  RANDFLOAT(0.2,0.8)
+<ML-DBPNN> ::= ML-DBPNN <ne> <nhu_bpnn> <lr_bpnn> <m_bpnn> <rbm>		
+<rbm> ::= RANDINT_TYPE0(2,5)
+            
+									
+<RSML> ::= RSML <bsp> <i_metamlc> <ap>
+<bsp> ::= RANDINT_TYPE0(10,100) 
+<i_metamlc> ::= RANDINT_TYPE0(10,50)
+<ap> ::= RANDINT_TYPE0(10,100)
+<MLC-BMaD> ::= MLC-BMaD <s> <tshd>
+<s> ::= RANDINT_TYPE5(1,L)
+<tshd> ::= RANDFLOAT(0.0,1.0)
+
+
+<META-MLC1-FULL> ::= BR <ALGS-SLC> | CC <ALGS-SLC> | LP <ALGS-SLC> | <BRq> <ALGS-SLC> | <CCq> <ALGS-SLC> | FW <ALGS-SLC> | RT <ALGS-SLC> | PCC <ALGS-SLC> | <CT> <ALGS-SLC>| <MCC> <ALGS-SLC>| <CDT> <ALGS-SLC> | <CDN> <ALGS-SLC> | <PS> <ALGS-SLC> | <PSt> <ALGS-SLC> | <RAkEL> <ALGS-SLC> | <RAkELd> <ALGS-SLC> | <BCC> <ALGS-SLC> | <PMCC> <ALGS-SLC> | <ML-BPNN>
+
+<BaggingMLC> ::= BaggingML <i_metamlc>
+<BaggingMLCDUP> ::= BaggingMLDup <bsp> <i_metamlc>
+<EnsembleMLC> ::= EnsembleML <bsp_ensembleML> <i_metamlc>
+<bsp_ensembleML> ::= RANDINT_TYPE0(52,72) 
+
+<META-MLC2-FULL> ::=  BR <ALG-TYPE-WITHOUT-FS> | CC <ALG-TYPE-WITHOUT-FS> | LP <ALG-TYPE-WITHOUT-FS> | <BRq> <ALG-TYPE-WITHOUT-FS> | <CCq> <ALG-TYPE-WITHOUT-FS> | FW <ALG-TYPE-WITHOUT-FS> | RT <ALG-TYPE-WITHOUT-FS> | PCC <ALG-TYPE-WITHOUT-FS> | <CT> <ALG-TYPE-WITHOUT-FS> | <MCC> <ALG-TYPE-WITHOUT-FS> | <CDT> <ALG-TYPE-WITHOUT-FS> | <CDN> <ALG-TYPE-WITHOUT-FS> | <PS> <ALG-TYPE-WITHOUT-FS> | <PSt> <ALG-TYPE-WITHOUT-FS> | <RAkEL> <ALG-TYPE-WITHOUT-FS> | <RAkELd> <ALG-TYPE-WITHOUT-FS> | <PMCC> <ALG-TYPE-WITHOUT-FS> | <ML-BPNN> 
+
+<EM> ::= EM <i_metamlc>
+<CM> ::= CM <i_metamlc>
+
+<META-MLC3-FULL> ::=  BR <ALG-TYPE-WITHOUT-FS> | CC <ALG-TYPE-WITHOUT-FS> | LP <ALG-TYPE-WITHOUT-FS> | <BRq> <ALG-TYPE-WITHOUT-FS> | <CCq> <ALG-TYPE-WITHOUT-FS> | FW <ALG-TYPE-WITHOUT-FS> | RT <ALG-TYPE-WITHOUT-FS> | PCC <ALG-TYPE-WITHOUT-FS> | <CT> <ALG-TYPE-WITHOUT-FS> | <MCC> <ALG-TYPE-WITHOUT-FS> | <CDT> <ALG-TYPE-WITHOUT-FS> | <CDN> <ALG-TYPE-WITHOUT-FS> | <PS> <ALG-TYPE-WITHOUT-FS> | <PSt> <ALG-TYPE-WITHOUT-FS> | <RAkEL> <ALG-TYPE-WITHOUT-FS> | <RAkELd> <ALG-TYPE-WITHOUT-FS> | <BCC> <ALG-TYPE-WITHOUT-FS> | <ML-BPNN>
+
+
+<HOMER> ::= HOMER <t> <k_homer>
+<t> ::= BalancedClustering | Clustering | Random
+<k_homer> ::= RANDINT_TYPE6(2,L-1) 
+<META-MLC4-FULL> ::= BR <ALG-TYPE-WITHOUT-FS> | CC <ALG-TYPE-WITHOUT-FS> | LP <ALG-TYPE-WITHOUT-FS>
+
+<MBR> ::= MBR BR <<ALGS-SLC>
+
+<DEFINE-THRESHOLD-LEVEL> ::= threshold <predtshd>
+<predtshd> ::= PCut1

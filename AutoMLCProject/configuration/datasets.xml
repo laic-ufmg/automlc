@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasets>
+	<!--
+		- training: lista todas a bases usadas no treinamento
+		- test: lista todas a bases usadas no teste
+	-->
+	<training>
+		<path>Music-train.arff</path>
+	</training>
+	<test>
+		<path>Music-test.arff</path>
+	</test>
+</datasets>
+
