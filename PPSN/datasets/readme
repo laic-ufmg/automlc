@@ -4,30 +4,46 @@ http://www.uco.es/kdis/mllresources/
 
 **Datasets descriptions from the aforementioned repository**:
 
-**3sources [Greene et al. 2009]**: These datasets includes 948 news articles covering 416 distinct news stories from the period February–April 2009. They have been collected from 3 sources: BBC, Reuters and The Guardian. Of these stories, 169 were reported in all three sources, 194 in two sources, and 53 appeared in a single news source. Each story was manually annotated with one or more of the six topical labels: business, entertainment, health, politics, sport, technology. In this way, three datasets with the news from BBC, Reuters and The Guardian respectively are created. A feature selection method has been performed in order to reduce the feature space and achieve a better performance. Each dataset has been selected 1000 features. Also, a dataset with the intersection (3sources-inter3000) of these three datasets (news which are in all three sources) has been created with the union of the 1000 features of each one of the datasets. The 3soures-inter3000 dataset can be also considered as a Multi-View Multi-Label (MVML) dataset, since it includes features from 3 distinct sources. The original data has been downloaded from http://mlg.ucd.ie/datasets/3sources.html
+**01 - Flags [Gonçalves et al. 2013]**: This dataset contains details of some countries and their flags, and the goal is to predict some of the features. The dataset was used the first time for Multi-label Classification in [Gonçalves et al. 2013], and the original dataset can be found at the UCI repository.
+
+**02 - Scene [Boutell et al. 2004]**: It is a image dataset, that contains 2407 images, annotated in up to 6 classes: beach, sunset, fall foliage, field, mountain and urban. Each image is described with 294 visual numeric features corresponding to spatial colour moments in the LUV space. 
+
+**03 - Birds [Briggs et al. 2013]**: It is a dataset to predict the set of birds species that are present, given a ten-second audio clip.
+
+**04 - Yeast [Elisseeff and Weston 2001]**: This dataset contains micro-array expressions and phylogenetic profiles for 2417 yeast genes. Each gen is annotated with a subset of 14 functional categories (e.g. Metabolism, energy, etc.) of the top level of the functional catalogue.
+
+**05 - Gpositive [Xu et al. 2016]**: This dataset is used to predict the sub-cellular locations of proteins according to their sequences. It contains 519 sequences for Gram positive species. Both the GO (Gene ontology) features and PseAAC (including 20 amino acid, 20 pseudo-amino acid and 400 diptide components) are provided. There are 4 subcellular locations (cell membrane, cell wall, cytoplasm and extracell).
+
+**06 - CHD_49 [Shao et al. 2013]**: This dataset has information of coronary heart disease (CHD) in traditional Chinese medicine (TCM). This dataset has been filtered by specialist removing irrelevant features, keeping only 49 features. 
+
+**07 - Water quality [Blockeel et al. 1999]**: This dataset is used to predict the quality of water of Slovenian rivers, knowing 16 characteristics such as the temperature, ph, hardness, NO2 or C02. 
+
+**08 - Emotions [Tsoumakas et al. 2008]**: Also called Music in [Read 2010]. Is a small dataset to classify music into emotions that it evokes according to the Tellegen-Watson-Clark model of mood: amazed-suprised, happy-pleased, relaxing-calm, quiet-still, sad-lonely and angry-aggresive. It consists of 593 songs with 6 classes. 
+
+**09 - Genbase [Diplaris et al. 2005]**: It is a dataset for protein function classification. Each instance is a protein and each label is a protein class. This dataset is small comparatively with the large number of labels. 
+
+**10 - 3sources [Greene et al. 2009]**: These datasets includes 948 news articles covering 416 distinct news stories from the period February–April 2009. They have been collected from 3 sources: BBC, Reuters and The Guardian. Of these stories, 169 were reported in all three sources, 194 in two sources, and 53 appeared in a single news source. Each story was manually annotated with one or more of the six topical labels: business, entertainment, health, politics, sport, technology. In this way, three datasets with the news from BBC, Reuters and The Guardian respectively are created. A feature selection method has been performed in order to reduce the feature space and achieve a better performance. Each dataset has been selected 1000 features. Also, a dataset with the intersection (3sources-inter3000) of these three datasets (news which are in all three sources) has been created with the union of the 1000 features of each one of the datasets. The 3soures-inter3000 dataset can be also considered as a Multi-View Multi-Label (MVML) dataset, since it includes features from 3 distinct sources. The original data has been downloaded from http://mlg.ucd.ie/datasets/3sources.html
 
 
-**Birds [Briggs et al. 2013]**: It is a dataset to predict the set of birds species that are present, given a ten-second audio clip.
+**References**
 
+[Gonçalves et al. 2013]: E.C. Goncalves, Alexandre Plastino, and Alex A. Freitas. A genetic algorithm for optimizing the label ordering in multi-label classifier chains. In IEEE 25th International Conference on Tools with Artificial Intelligence, pages 469–476. IEEE Computer Society Conference Publishing Services (CPS), 2013.
 
-**CHD_49 [Shao et al. 2013]**: This dataset has information of coronary heart disease (CHD) in traditional Chinese medicine (TCM). This dataset has been filtered by specialist removing irrelevant features, keeping only 49 features. 
+[Boutell et al. 2004]: Matthew R. Boutell, Jiebo Luo, Xipeng Shen, and Christopher M. Brown. Learning multi-label scene classification. Pattern Recognition, 37(9):1757–1771, September 2004.
 
+[Briggs et al. 2013]: Forrest Briggs, Yonghong Huang, Raviv Raich, Konstantinos Eftaxias, Zhong Lei, William Cukierski, Sarah Frey Hadley, Adam Hadley, Matthew Betts, Xiaoli Z. Fern, Jed Irvine, Lawrence Neal, Anil Thomas, Gábor Fodor, Grigorios Tsoumakas, Hong Wei Ng, Thi Ngoc Tho Nguyen, Heikki Huttunen, Pekka Ruusuvuori, Tapio Manninen, Aleksandr Diment, Tuomas Virtanen, Julien Marzat, Joseph Defretin, Dave Callender, Chris Hurlburt, Ken Larrey, and Maxim Milakov. The 9th annual MLSP competition: New methods for acoustic classification of multiple simultaneous bird species in a noisy environment. In IEEE International Workshop on Machine Learning for Signal Processing, MLSP 2013, Southampton, United Kingdom, September 22-25, 2013, pages 1–8, 2013.
 
-**Emotions [Tsoumakas et al. 2008]**: Also called Music in [Read 2010]. Is a small dataset to classify music into emotions that it evokes according to the Tellegen-Watson-Clark model of mood: amazed-suprised, happy-pleased, relaxing-calm, quiet-still, sad-lonely and angry-aggresive. It consists of 593 songs with 6 classes. 
+[Elisseeff and Weston 2001]: Andre Elisseeff and Jason Weston. A kernel method for multi-labelled classification. In In Advances in Neural Information Processing Systems 14, volume 14, pages 681–687, 2001.
 
+[Xu et al. 2016]: Jianhua Xu, Jiali Liu, Jing Yin, and Chengyu Sun. A multi-label feature extraction algorithm via maximizing feature variance and feature-label dependence simultaneously. Knowledge-Based Systems, 98:172 — 184, 2016 
 
-**Flags [Gonçalves et al. 2013]**: This dataset contains details of some countries and their flags, and the goal is to predict some of the features. The dataset was used the first time for Multi-label Classification in [Gonçalves et al. 2013], and the original dataset can be found at the UCI repository.
+[Shao et al. 2013]: H. Shao, G.Z. Li, G.P. Liu, and Y.Q. Wang. Symptom selection for multi-label data of inquiry diagnosis in traditional chinese medicine. Science China Information Sciences, 56(5):1–13, 2013.
 
+[Blockeel et al. 1999]: H. Blockeel, S. Džeroski, and J. Grbovic. Simultaneous prediction of multiple chemical parameters of river water quality with tilde. Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 1704:32–40, 1999.
 
-**Genbase [Diplaris et al. 2005]**: It is a dataset for protein function classification. Each instance is a protein and each label is a protein class. This dataset is small comparatively with the large number of labels. 
+[Tsoumakas et al. 2008]: G. Tsoumakas, I. Katakis, and I. Vlahavas. Effective and Efficient Multilabel Classification in Domains with Large Number of Labels. In Proc. ECML/PKDD 2008 Workshop on Mining Multidimensional Data (MMD’08), 2008.
 
+[Diplaris et al. 2005]: Sotiris Diplaris, Grigorios Tsoumakas, Pericles Mitkas, and Ioannis Vlahavas. Protein Classification with Multiple Algorithms. In Panhellenic Conference on Informaticspages 448–456. 2005.
 
-**Gpositive [Xu et al. 2016]**: This dataset is used to predict the sub-cellular locations of proteins according to their sequences. It contains 519 sequences for Gram positive species. Both the GO (Gene ontology) features and PseAAC (including 20 amino acid, 20 pseudo-amino acid and 400 diptide components) are provided. There are 4 subcellular locations (cell membrane, cell wall, cytoplasm and extracell).
+[Greene et al. 2009]: Derek Greene and Pádraig Cunningham. A matrix factorization approach for integrating multiple data views. In Proceedings of the European Conference on Machine Learning and Knowledge Discovery in Databases: Part I, ECML PKDD ’09, pages 423–438, 2009.
 
-
-**Scene [Boutell et al. 2004]**: It is a image dataset, that contains 2407 images, annotated in up to 6 classes: beach, sunset, fall foliage, field, mountain and urban. Each image is described with 294 visual numeric features corresponding to spatial colour moments in the LUV space. 
-
-
-**Water quality [Blockeel et al. 1999]**: This dataset is used to predict the quality of water of Slovenian rivers, knowing 16 characteristics such as the temperature, ph, hardness, NO2 or C02. 
-
-**Yeast [Elisseeff and Weston 2001]**: This dataset contains micro-array expressions and phylogenetic profiles for 2417 yeast genes. Each gen is annotated with a subset of 14 functional categories (e.g. Metabolism, energy, etc.) of the top level of the functional catalogue.
