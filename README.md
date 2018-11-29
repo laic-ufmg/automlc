@@ -21,6 +21,15 @@ This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatica
 
 The description of the multi-label classification (MLC) search is available in the following link: [MLC Search Space](https://github.com/laic-ufmg/automlc/blob/master/PPSN/MLC-SearchSpace.pdf)
 
+### **Usage**
+
+We are still working on a tutorial to turn Auto-MEKA_GGP and GA-Auto-MLC easy methods to use.
+
+
+## **Datasets**
+
+Several datatasets are available at: [PPSN Datasets](https://github.com/laic-ufmg/automlc/tree/master/PPSN/datasets).
+
 ## **License**
 
 See [LICENSE](https://github.com/laic-ufmg/automlc/blob/master/LICENSE) file.
@@ -30,5 +39,5 @@ See [LICENSE](https://github.com/laic-ufmg/automlc/blob/master/LICENSE) file.
 
 Any questions or comments should be directed to Alex de Sá (alexgcsa@dcc.ufmg.br). You can also create an issue on the repository.
 
-**We are still working on a tutorial to turn Auto-MEKA_GGP and GA-Auto-MLC easy methods to use.**
+
 
