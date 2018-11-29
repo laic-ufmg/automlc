@@ -1,7 +1,7 @@
 # AutoMLC
 Automated Multi-Label Classification
 
-**Overview**
+## **Overview**
 
 This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatically select and configure multi-label classification algorithms based on the [MEKA tool](http://waikato.github.io/meka/). If you use this project in your work, please cite the following papers:
 
@@ -17,16 +17,16 @@ This project presents GA-Auto-MLC and Auto-MEKA_GGP, two methods that automatica
   
   
 
-**Documentation**
+## **Documentation**
 
 The description of the multi-label classification (MLC) search is available in the following link: [MLC Search Space](https://github.com/laic-ufmg/automlc/blob/master/PPSN/MLC-SearchSpace.pdf)
 
-**License**
+## **License**
 
 See [LICENSE](https://github.com/laic-ufmg/automlc/blob/master/LICENSE) file.
 
 
-**Support**
+## **Support**
 
 Any questions or comments should be directed to Alex de Sá (alexgcsa@dcc.ufmg.br). You can also create an issue on the repository.
 
