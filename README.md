@@ -1,3 +1,5 @@
+![License](https://img.shields.io/badge/license-GPLv3-blue.svg) 
+
 # AutoMLC
 Automated Multi-Label Classification
 
