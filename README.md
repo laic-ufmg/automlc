@@ -1,3 +1,4 @@
+![Java 8](https://img.shields.io/badge/java-8-blue.svg) 
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg) 
 
 # AutoMLC
